@@ -1,4 +1,18 @@
-.home-page {
+.container {
+    margin: 0 auto;
+  }
+  
+  header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  nav ul {
+    list-style: none;
+    padding: 0;
+    background-color: #444;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -145,7 +159,12 @@
     max-height: 40%; /* Adjust the percentage to your desired image size */
 }
 
+
 .profile-icon i {
     color: #FEF9F3; /* Color of the icon inside the circle */
     font-size: 5px;
 }
+
+
+
+  

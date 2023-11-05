@@ -5,6 +5,7 @@ import Welcome from './pages/Welcome';
 import HomePage from './pages/HomePage';
 //import Register from './pages/Register';
 import Login from './pages/Login';
+import Questions from './pages/Questions';
 
 // import Welcome from './pages/Welcome'
 
@@ -14,10 +15,10 @@ const App = () => {
       <Router>
         <Routes>
           <Route path ="/" element = {<Welcome />} />
-          <Route path ="/Login" element = {<Login />} />
           <Route path ="/HomePage" element = {<HomePage />} />
-          {/* <Route path="/register" element={<Register />} />
-          <Route path ="/login" element={<Login />} /> */}
+          {/* <Route path="/register" element={<Register />} />*/}
+          <Route path ="/login" element={<Login />} /> 
+          <Route path ="/Questions" element={<Questions />} />
         </Routes>
       </Router>
     </div>
