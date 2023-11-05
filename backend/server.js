@@ -39,6 +39,36 @@ app.post('/api/login', async (req, res) => {
     }
 })
 
+app.post('/api/data', async (req, res) => {
+    const token = req.body.token;
+    const jwt = await jose.JWT.verify(token, new TextEncoder().encode(process.env.JWTKey));
+    const user = await User.findOne({email: jwt.payload.email});
+    if (!user) {
+        return res.json({status: 'error', error: 'Invalid username/password'});
+    }
+
+    const data = {
+        country: req.body.country,
+        state: req.body.state,
+        city: req.body.city,
+        industry: req.body.industry,
+        employees: req.body.employees,
+        security: req.body.security,
+        claims: req.body.claims,
+        risks: req.body.risks,
+        interaction: req.body.interaction,
+        age: req.body.age,
+        fire: req.body.fire,
+        nature: req.body.nature,
+        safety: req.body.safety,
+    };
+
+    const file = new File(data);
+    await file.save();
+
+    return res.json({status: 'ok', user: token})
+});
+
 app.listen(1337, () => {
     console.log('Server started');
 })

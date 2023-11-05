@@ -1,7 +1,5 @@
 .container {
-    max-width: 800px;
     margin: 0 auto;
-    padding: 20px;
   }
   
   header {
@@ -41,4 +39,8 @@
     text-align: center;
     padding: 10px;
   }
-  
+
+  .question {
+    max-height: 400px; /* Adjust the height as needed */
+    overflow: auto;
+  }

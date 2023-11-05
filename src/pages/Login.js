@@ -2,25 +2,30 @@ import React, { useEffect, useState } from 'react';
 import './Login.css';
 import { useNavigate } from 'react-router-dom';
 
+
 function Login() {
 
-    const navigate = useNavigate()
+    const navigate = useNavigate();
 
+    const [fadeIn, setFadeIn] = useState(false);
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
-    function handleRegisterAsk(e){
+    useEffect(() => {
+        // Use a timeout to trigger the fade-in effect after a delay
+        setTimeout(() => {
+            setFadeIn(true);
+        }, 500); // Adjust the delay as needed
+    }, []);
+
+    function handleLoginAsk(e) {
         e.preventDefault();
-<<<<<<< HEAD
-        navigate('/register');
-=======
         navigate('/HomePage');
->>>>>>> fae5560d04cd9f56749f4ea9495d0961be93031e
     }
 
     async function loginUser(event) {
         event.preventDefault()
-
+    
         const response = await fetch('http://localhost:1337/api/login', {
             method: 'POST',
             headers: {
@@ -43,55 +48,43 @@ function Login() {
         }
     }
 
-
-
     return (
-        <div className="App2">
-            <div className = "Form2">
-                <div className = "RealForm2">
-                    <form onSubmit = {loginUser}>
-                        <label for="signinField" id="signin">Sign In</label>
-                        <label for="personNameField" class = "labels2" id = "personName">Username</label>
-                        <input 
-                            class="inputs2"
+        <div className={`App1 ${fadeIn ? 'fade-in' : ''}`}>
+            <div className="Form1">
+                <div className="RealForm1">
+                    <div className="Header">
+                        <label htmlFor="signinField" id="signin2">
+                            Harmony
+                        </label>
+                        <img src="/images/flower.png" alt="Flower" id="flowerImage"/>
+                    </div>
+                    <div className="InputContainer">
+                        <input
+                            type="text"
+                            placeholder="Email"
                             value = {email}
                             onChange = {(e) => setEmail(e.target.value)}
-                            type="text"  
+                            className="RectangularInput" 
                         />
-                        <br />
-                        <label for="passwordField" class = "labels2" id = "password">Password </label>
-                        {/* <br /> */}
-                        <input 
-                            class="inputs2"
+                        <input
+                            type="password"
+                            placeholder="Password"
                             value = {password}
                             onChange = {(e) => setPassword(e.target.value)}
-                            type="password"  
+                            className="RectangularInput" 
                         />
-                        <input className='Buttons' id="signinButton" type="submit" value="Sign In"/>
-                        {/* <br />
-                        
-                        <p className="or"> or </p>
-                        <div className="googleBtn">
-                            <button className="googleBtn">
-                        <GoogleOAuthProvider clientId="436198478288-efo40fbhrj324kk9uktqfr20tthrt5dk.apps.googleusercontent.com">
-                        <GoogleLogin
-                            id = "googleButton"
-                            onSuccess={googleAuth}
-                            onError={() => {
-                                console.log('Login Failed');
-                            }}
-                        > test </GoogleLogin> 
-                        </GoogleOAuthProvider>
-                        </button>
+                        <div className="Buttons">
+                            <input
+                                id="signinButton2"
+                                type="submit"
+                                value="Log In"
+                                onClick={loginUser}
+                            />
                         </div>
-                        <p id = "noAccount">Don't have an account?</p>
-                        <input className='Buttons' id="signupButton2" type="submit" value="Click here to sign up!" onClick={handleRegisterAsk}/> */}
-                        
-                        
-                    </form>
-                    
+                    </div>
                 </div>
             </div>
+            <img src="/images/wave.png" alt="Wave" className="waveImage" />
         </div>
     );
 }
