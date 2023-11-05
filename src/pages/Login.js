@@ -1,109 +1,56 @@
+import React, { useEffect, useState } from 'react';
 import './Login.css';
-import {useState} from 'react'
-import {useNavigate} from 'react-router-dom'
-// import { gapi } from 'gapi-script';
-// import { GoogleOAuthProvider } from '@react-oauth/google';
-// import { GoogleLogin } from '@react-oauth/google';
+import { useNavigate } from 'react-router-dom';
 
 function Login() {
-    var CLIENT_ID
-    var API_KEY
-    var DISCOVERY_DOCS
-    var SCOPES
+    const navigate = useNavigate();
+    const [fadeIn, setFadeIn] = useState(false);
 
-    const res = fetch("http://localhost:1337/api/google-auth-keys", {
-        method: "GET",
-    }).then((res) => res.json()
-    ).then((res) => {
-        CLIENT_ID = res.CLIENT_ID
-        API_KEY = res.API_KEY
-        DISCOVERY_DOCS = res.DISCOVERY_DOCS
-        SCOPES = res.SCOPES
-    });
+    useEffect(() => {
+        // Use a timeout to trigger the fade-in effect after a delay
+        setTimeout(() => {
+            setFadeIn(true);
+        }, 500); // Adjust the delay as needed
+    }, []);
 
-    const navigate = useNavigate()
-
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
-
-    function handleRegisterAsk(e){
+    function handleLoginAsk(e) {
         e.preventDefault();
-        navigate('/register');
+        navigate('/login');
     }
-
-    async function loginUser(event) {
-        event.preventDefault()
-
-        const response = await fetch('http://localhost:1337/api/login', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                email,
-                password
-            }),
-        })
-        
-        const data = await response.json();
-        
-        if(data.user){
-            localStorage.setItem('token', data.user)
-            navigate('/home')
-        }
-        else{
-            //add error message
-        }
-    }
-
-
 
     return (
-        <div className="App2">
-            <div className = "Form2">
-                <div className = "RealForm2">
-                    <form onSubmit = {loginUser}>
-                        <label for="signinField" id="signin">Sign In</label>
-                        <label for="personNameField" class = "labels2" id = "personName">Username</label>
-                        <input 
-                            class="inputs2"
-                            value = {email}
-                            onChange = {(e) => setEmail(e.target.value)}
-                            type="text"  
+        <div className={`App1 ${fadeIn ? 'fade-in' : ''}`}>
+            <div className="Form1">
+                <div className="RealForm1">
+                    <div className="Header">
+                        <label htmlFor="signinField" id="signin2">
+                            Harmony
+                        </label>
+                        <img src="/images/flower.png" alt="Flower" id="flowerImage"/>
+                    </div>
+                    <div className="InputContainer">
+                        <input
+                            type="text"
+                            placeholder="Email"
+                            className="RectangularInput" 
                         />
-                        <br />
-                        <label for="passwordField" class = "labels2" id = "password">Password </label>
-                        {/* <br /> */}
-                        <input 
-                            class="inputs2"
-                            value = {password}
-                            onChange = {(e) => setPassword(e.target.value)}
-                            type="password"  
+                        <input
+                            type="password"
+                            placeholder="Password"
+                            className="RectangularInput" 
                         />
-                        {/* <br />
-                        <input className='Buttons' id="signinButton" type="submit" value="Sign In"/>
-                        <p className="or"> or </p>
-                        <div className="googleBtn">
-                            <button className="googleBtn">
-                        <GoogleOAuthProvider clientId="436198478288-efo40fbhrj324kk9uktqfr20tthrt5dk.apps.googleusercontent.com">
-                        <GoogleLogin
-                            id = "googleButton"
-                            onSuccess={googleAuth}
-                            onError={() => {
-                                console.log('Login Failed');
-                            }}
-                        > test </GoogleLogin> 
-                        </GoogleOAuthProvider>
-                        </button>
+                        <div className="Buttons">
+                            <input
+                                id="signinButton2"
+                                type="submit"
+                                value="Log In"
+                                onClick={handleLoginAsk}
+                            />
                         </div>
-                        <p id = "noAccount">Don't have an account?</p>
-                        <input className='Buttons' id="signupButton2" type="submit" value="Click here to sign up!" onClick={handleRegisterAsk}/> */}
-                        
-                        
-                    </form>
-                    
+                    </div>
                 </div>
             </div>
+            <img src="/images/wave.png" alt="Wave" className="waveImage" />
         </div>
     );
 }
