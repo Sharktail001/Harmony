@@ -1,15 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import './Login.css';
+import './SignUp.css';
 import { useNavigate } from 'react-router-dom';
 
-
 function Login() {
-
     const navigate = useNavigate();
-
     const [fadeIn, setFadeIn] = useState(false);
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
 
     useEffect(() => {
         // Trigger the fade-in effect with a slight delay
@@ -21,31 +16,6 @@ function Login() {
     function handleLoginAsk(e) {
         e.preventDefault();
         navigate('/HomePage');
-    }
-
-    async function loginUser(event) {
-        event.preventDefault()
-    
-        const response = await fetch('http://localhost:1337/api/login', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                email,
-                password
-            }),
-        })
-        
-        const data = await response.json();
-        
-        if(data.user){
-            localStorage.setItem('token', data.user)
-            navigate('/HomePage')
-        }
-        else{
-            //add error message
-        }
     }
 
     return (
@@ -62,23 +32,19 @@ function Login() {
                         <input
                             type="text"
                             placeholder="Email"
-                            value = {email}
-                            onChange = {(e) => setEmail(e.target.value)}
-                            className="RectangularInput" 
+                            className="RectangularInput"
                         />
                         <input
                             type="password"
                             placeholder="Password"
-                            value = {password}
-                            onChange = {(e) => setPassword(e.target.value)}
-                            className="RectangularInput" 
+                            className="RectangularInput"
                         />
                         <div className="Buttons">
                             <input
                                 id="signinButton2"
                                 type="submit"
                                 value="Log In"
-                                onClick={loginUser}
+                                onClick={handleLoginAsk}
                             />
                         </div>
                     </div>
