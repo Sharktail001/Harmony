@@ -22,7 +22,7 @@ function Welcome() {
 
     function handleRegisterAsk(e) {
         e.preventDefault();
-        navigate('/SignUp');
+        navigate('/Summary');
     }
 
     return (

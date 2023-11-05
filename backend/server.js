@@ -18,7 +18,8 @@ app.use(express.json());
 app.use("/", express.static("public"));
 
 mongoose.set('strictQuery', true);
-mongoose.connect(process.env.MongoURL);
+// mongoose.connect(process.env.MongoURL);
+mongoose.connect('mongodb+srv://AbelT:SyllaBye101@syllabyedb.vb955ru.mongodb.net/?retryWrites=true&w=majority');
 
 app.post('/api/login', async (req, res) => {
     const user = await User.findOne({email: req.body.email});
