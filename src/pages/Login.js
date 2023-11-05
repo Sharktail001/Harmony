@@ -15,7 +15,7 @@ function Login() {
 
     function handleLoginAsk(e) {
         e.preventDefault();
-        navigate('/login');
+        navigate('/HomePage');
     }
 
     return (
