@@ -11,7 +11,11 @@ function Login() {
 
     function handleRegisterAsk(e){
         e.preventDefault();
+<<<<<<< HEAD
         navigate('/register');
+=======
+        navigate('/HomePage');
+>>>>>>> fae5560d04cd9f56749f4ea9495d0961be93031e
     }
 
     async function loginUser(event) {
