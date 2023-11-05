@@ -1,44 +1,156 @@
-.container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  header {
-    background-color: #333;
-    color: #fff;
-    padding: 10px;
-    text-align: center;
-  }
-  
-  nav ul {
-    list-style: none;
-    padding: 0;
-    background-color: #444;
+.home-page {
     display: flex;
-    justify-content: center;
-  }
-  
-  nav ul li {
-    margin: 10px;
-  }
-  
-  main {
+    flex-direction: column;
+    align-items: center;
     padding: 20px;
   }
+  .header-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #FEF9F3;
+  }
+  .header-label {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 4vw;
+    color: #C175AE;
+    font-size: 24px;
+    margin-right: 3px; /* Add margin between the label and the image */
+
+  }
+  .header-content {
+    display: flex;
+    align-items: center;
+  }
   
-  section {
+  .header-image {
+    width: 30px; /* Set the width to the desired size */
+    height: 30px; /* Set the height to the desired size */
+    margin-right: 10px; /* Add margin between the label and the image */
+  }
+  
+  h1 {
+    font-size: 24px;
     margin-bottom: 20px;
+  }
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Horizontally center the cards */
+    align-items: center; /* Vertically center the cards */
+  }
+    
+  .card {
+    width: calc(27% - 20px);
+    height: 50vh;
+    font-size: 18px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 10px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #FEF9F3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Distribute space between title and descriptions */
+  }
+  
+.card p {
+    font-weight: bold; /* Add this line to make the text bold */
+  }
+  
+  
+  .card img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    opacity: 0; /* Hide the image by default */
+    transition: transform 0.3s, opacity 2s;
+    transform: scale(1.5);
   }
   
   h2 {
-    color: #333;
+    font-size: 24px;
+    margin: 5px 0;
+    font-weight: bold; 
+    font-family: 'Inter'; 
+    color: #C175AE; 
+    margin-right: 20px; 
   }
   
-  footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 10px;
+  p {
+    font-size: 16px;
+    color: #555;
+    padding-top: 3vh; /* Match the padding */
+    padding-right: 2vw; /* Match the padding */
+    padding-left: 2vw; /* Match the padding */
   }
+  .card .description2 {
+    font-weight: 500;
+  }
+  
+  .add-card {
+    width: 200px;
+    height: 200px;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  .add-card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .plus-icon {
+    font-size: 36px;
+  }
+
+  .waveImage-homepage {
+    display: block;
+    width: 103%;
+    height: auto;
+    margin-top: 14.5px; /* Adjust the margin to position the wave image */
+    z-index: -1; /* Set a negative z-index to place it behind other content */
+  }
+  .profile-icon {
+    position: fixed;
+    top: 20px; /* Adjust the position from the top */
+    right: 20px; /* Adjust the position from the right */
+    width: 60px;
+    height: 60px;
+    background-color: #FEF9F3;
+    border-radius: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1; /* Place it above the wave image */
+}
+
+.profile-icon img {
+    max-width: 40%; /* Adjust the percentage to your desired image size */
+    max-height: 40%; /* Adjust the percentage to your desired image size */
+}
+
+
+.profile-icon i {
+    color: #FEF9F3; /* Color of the icon inside the circle */
+    font-size: 5px;
+}
+
+
+
   

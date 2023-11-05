@@ -133,6 +133,12 @@ body {
 .fade-in {
     opacity: 1;
 }
+/* CSS for the fade-out effect */
+.fade-out {
+    opacity: 0;
+    transition: opacity 1s; /* Adjust the duration as needed */
+}
+
 
 .waveImage {
     display: block;
