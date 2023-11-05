@@ -35,7 +35,7 @@ function Login() {
         
         if(data.user){
             localStorage.setItem('token', data.user)
-            navigate('/home')
+            navigate('/HomePage')
         }
         else{
             //add error message
@@ -66,8 +66,9 @@ function Login() {
                             onChange = {(e) => setPassword(e.target.value)}
                             type="password"  
                         />
-                        {/* <br />
                         <input className='Buttons' id="signinButton" type="submit" value="Sign In"/>
+                        {/* <br />
+                        
                         <p className="or"> or </p>
                         <div className="googleBtn">
                             <button className="googleBtn">
