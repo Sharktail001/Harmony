@@ -4,7 +4,7 @@ import './App.css';
 import Welcome from './pages/Welcome';
 import { HomePage } from './pages/HomePage';
 //import Register from './pages/Register';
-//import Login from './pages/Login';
+import Login from './pages/Login';
 
 // import Welcome from './pages/Welcome'
 
@@ -15,6 +15,8 @@ const App = () => {
         <Routes>
           <Route path ="/" element = {<Welcome />} />
           <Route path ="/HomePage" element = {<HomePage />} />
+          <Route path ="/Login" element = {<Login />} />
+
           {/* <Route path="/register" element={<Register />} />
           <Route path ="/login" element={<Login />} /> */}
         </Routes>
