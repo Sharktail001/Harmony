@@ -1,47 +1,67 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;700&display=swap');
- 
-  .App1{
+
+body {
+    background-color: #FEF9F3;
+    overflow-y: hidden;
+}
+
+.App1 {
     text-align: center;
-  }
+    margin-bottom: -20px;
+}
 
-    .Form1{
-      display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding-top: 15vh;
-  padding-bottom: 11vh;
-  width: 100vw;
-  height: 60vh;
-  background-size:cover;
-  background-color: #FEF9F3;
-  flex: none;
-  order: 1;
-  flex-grow: 0;
-    }
+.Form1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 12vh; /* Decreased from 15vh */
+    padding-bottom: 5vh; /* Decreased from 11vh */
+    width: 100vw;
+    height: 60vh;
+    background-size: cover;
+    background-color: #FEF9F3;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
 
-    .RealForm1{
-      width: 40%;
-  height: 90%;
-  align-self: center;
-  background: #FEF9F3;
-  border-radius: 30px;
-  flex: none;
-  order: 0;
-  flex-grow: 0;
-    }
-    
-    #signin2{
-    margin-top: 8vh;
+.RealForm1 {
+    width: 40%;
+    height: 90%;
+    align-self: center;
+    background: #FEF9F3;
+    border-radius: 30px;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+.Header {
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    justify-content: center;
+}
+
+#signin2 {
     font-family: 'Inter';
     font-style: normal;
     font-weight: bold;
-    font-size: 3.25vw;
+    font-size: 4vw;
     color: #C175AE;
-    
-    }
-    #welcomeMessage{
-      padding-top: 2vh;
+    margin-right: 20px; /* Adjust the margin as needed to separate the label and image */
+}
+
+#flowerImage {
+    max-width: 4vw;
+    height: auto;
+    transition: transform 0.3s, opacity 2s;
+    transform: scale(1.5);
+    opacity: 0;
+}
+
+#welcomeMessage {
+    padding-top: 3vh;
     padding-right: 2vw;
     padding-left: 2vw;
     font-family: 'Inter';
@@ -49,65 +69,84 @@
     font-weight: bold;
     font-size: 3.0vh;
     color: black;
-    }
+}
 
-    .Buttons {
-        justify-content: center; 
-        padding-left: 12vw;
-        padding-right: 2vw;
-        padding-top: 6vh;
-      }
-      
-      #signinButton2 {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 2.2vh;
-        margin-top: 1vh;
-        margin-left: 1vh;
-        cursor: pointer;
-        background: #FEF9F3;
-        border-radius: 30px;
-        border-color: #EF8094;
-        color: black;
-        font-size: 1.2rem;
-        width: 200px;
-        flex: none;
-        order: -1;
-        flex-grow: 0;
-      }
-      
-      #signupButton3 {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 2vh;
-        margin-top: 1vh;
-        margin-left: 1vh;
-        cursor: pointer;
-        background: #EF8094;
-        border-radius: 30px;
-        border-color: #FEF9F3;
-        color: #FEF9F3;
-        font-size: 1.2rem;
-        width: 200px;
-        flex: none;
-        order: 0;
-        flex-grow: 0;
-      }      
-      #flowerImage {
-        max-width: 100%;
-        height: auto;
-        display: block;
-        margin: 0 auto; 
-     }
-      
-  
-    label, input {display: block;}
-    @media (prefers-reduced-motion: no-preference) {
-      .App-logo {
+.Buttons {
+    justify-content: center;
+    padding-left: 12vw;
+    padding-right: 2vw;
+    padding-top: 6vh;
+    margin-top: -20px;
+}
+
+#signinButton2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2.2vh;
+    margin-top: 1vh;
+    margin-left: 1vh;
+    cursor: pointer;
+    background: #FEF9F3;
+    border-radius: 30px;
+    border-color: #EF8094;
+    color: black;
+    font-size: 1.2rem;
+    width: 200px;
+    flex: none;
+    order: -1;
+    flex-grow: 0;
+}
+
+#signupButton3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2vh;
+    margin-top: 1vh;
+    margin-left: 1vh;
+    cursor: pointer;
+    background: #EF8094;
+    border-radius: 30px;
+    border-color: #FEF9F3;
+    color: #FEF9F3;
+    font-size: 1.2rem;
+    width: 200px;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+#flowerImage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+    transition: transform 0.3s, opacity 2s;
+    transform: scale(1.5);
+    opacity: 0;
+}
+
+/* Add a CSS class to apply the fade-in effect when the image is loaded */
+.fade-in {
+    opacity: 1;
+}
+
+.waveImage {
+    display: block;
+    width: 100%;
+    margin-top: -50px; /* Decreased margin to move the wave image higher */
+}
+
+label,
+input {
+    display: block;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .App-logo {
         animation: App-logo-spin infinite 20s linear;
-      }
     }
-    
-    
+}

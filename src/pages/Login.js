@@ -1,9 +1,6 @@
+import React, { useEffect, useState } from 'react';
 import './Login.css';
-import {useState} from 'react'
-import {useNavigate} from 'react-router-dom'
-// import { gapi } from 'gapi-script';
-// import { GoogleOAuthProvider } from '@react-oauth/google';
-// import { GoogleLogin } from '@react-oauth/google';
+import { useNavigate } from 'react-router-dom';
 
 function Login() {
 
