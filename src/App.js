@@ -3,7 +3,7 @@ import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import './App.css';
 import Welcome from './pages/Welcome';
 import HomePage from './pages/HomePage';
-//import Register from './pages/Register';
+import SignUp from './pages/SignUp';
 import Login from './pages/Login';
 import Questions from './pages/Questions';
 
@@ -16,7 +16,7 @@ const App = () => {
         <Routes>
           <Route path ="/" element = {<Welcome />} />
           <Route path ="/HomePage" element = {<HomePage />} />
-          {/* <Route path="/register" element={<Register />} />*/}
+          <Route path ="/SignUp" element = {<SignUp />} />
           <Route path ="/login" element={<Login />} /> 
           <Route path ="/Questions" element={<Questions />} />
         </Routes>

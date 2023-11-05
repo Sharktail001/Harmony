@@ -1,36 +1,28 @@
-.RectangularInput {
-    width: 80%; /* Adjust the width as needed */
-    padding: 10px;
-    font-size: 1.2rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    margin: 10px auto; /* Center the input boxes horizontally */
-    display: block;
-    transition: opacity 2s; /* Adjust the duration for the fade-in effect */
-}
-
-
-#flowerImage {
-    max-width: 4vw;
-    height: auto;
-    opacity: 1;
-}
-
-/* Add this CSS rule for the fade-in effect */
-.fade-in {
-    animation: fadeInAnimation 1s ease-in;
-}
-
-@keyframes fadeInAnimation {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-
-.InputContainer{
-    padding-top: 30px;
-}
+.summary-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .semi-circle {
+    position: relative;
+    width: 200px;
+    height: 100px;
+    border-radius: 100px 100px 0 0;
+    background-color: #ccc;
+  }
+  
+  .scale {
+    position: absolute;
+    width: 0;
+    height: 100%;
+    background-color: #00b3e0;
+    border-radius: 100px 100px 0 0;
+    transition: width 2s ease; /* You can adjust the transition duration */
+  }
+  
+  .analysis-content {
+    /* Add styles for your analysis content */
+  }
+  

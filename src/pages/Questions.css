@@ -1,6 +1,9 @@
 .container {
-    margin: 0 auto;
-  }
+  max-width: 800px; /* Adjust the maximum width as needed */
+  margin: 0 auto;
+  height: 80vh; /* Set a fixed height for the container */
+  overflow-y: auto; /* Enable vertical scrolling when content exceeds the container height */
+}
   
   header {
     background-color: #333;

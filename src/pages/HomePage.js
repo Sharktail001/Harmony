@@ -26,7 +26,7 @@ const HomePage = () => {
       description2: 'Additional information about this card.',
     });
     setCardData(newCardData);
-    navigate('/login');
+    navigate('/Questions');
   };
 
   return (
