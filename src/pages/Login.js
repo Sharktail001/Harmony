@@ -6,20 +6,6 @@ import {useNavigate} from 'react-router-dom'
 // import { GoogleLogin } from '@react-oauth/google';
 
 function Login() {
-    var CLIENT_ID
-    var API_KEY
-    var DISCOVERY_DOCS
-    var SCOPES
-
-    const res = fetch("http://localhost:1337/api/google-auth-keys", {
-        method: "GET",
-    }).then((res) => res.json()
-    ).then((res) => {
-        CLIENT_ID = res.CLIENT_ID
-        API_KEY = res.API_KEY
-        DISCOVERY_DOCS = res.DISCOVERY_DOCS
-        SCOPES = res.SCOPES
-    });
 
     const navigate = useNavigate()
 
